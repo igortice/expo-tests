@@ -1,0 +1,1 @@
+export { useCustomSplashScreen } from './useCustomSplashScreen';

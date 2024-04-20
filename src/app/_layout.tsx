@@ -1,5 +1,11 @@
 import { Slot } from 'expo-router';
 
-export function RootLayout() {
-  return <Slot />;
+import { ProviderSplashScreen } from '@/providers';
+
+export default function RootLayout() {
+  return (
+    <ProviderSplashScreen>
+      <Slot />
+    </ProviderSplashScreen>
+  );
 }
