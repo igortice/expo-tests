@@ -1,7 +1,7 @@
-import { config } from '@gluestack-ui/config';
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 
-import { ProviderSplashScreen } from './ProviderSplashScreen';
+import { themeConfig } from '@/configs';
+import { ProviderSplashScreen } from '@/providers/ProviderSplashScreen';
 
 interface IRootProviderProps {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ interface IRootProviderProps {
 
 export const RootProvider = ({ children }: IRootProviderProps) => {
   return (
-    <GluestackUIProvider config={config}>
+    <GluestackUIProvider config={themeConfig}>
       <ProviderSplashScreen>{children}</ProviderSplashScreen>
     </GluestackUIProvider>
   );
