@@ -1,7 +1,20 @@
+import * as Font from 'expo-font';
 import { SplashScreen } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 
 SplashScreen.preventAutoHideAsync();
+
+const CUSTOM_FONTS = {
+  'Inter-Black': require('@/assets/fonts/Inter-Black.otf'),
+  'Inter-Bold': require('@/assets/fonts/Inter-Bold.otf'),
+  'Inter-ExtraBold': require('@/assets/fonts/Inter-ExtraBold.otf'),
+  'Inter-ExtraLight': require('@/assets/fonts/Inter-ExtraLight.otf'),
+  'Inter-Light': require('@/assets/fonts/Inter-Light.otf'),
+  'Inter-Medium': require('@/assets/fonts/Inter-Medium.otf'),
+  'Inter-Regular': require('@/assets/fonts/Inter-Regular.otf'),
+  'Inter-SemiBold': require('@/assets/fonts/Inter-SemiBold.otf'),
+  'Inter-Thin': require('@/assets/fonts/Inter-Thin.otf'),
+};
 
 export const useCustomSplashScreen = () => {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -19,8 +32,7 @@ export const useCustomSplashScreen = () => {
 
   async function prepare() {
     try {
-      // Use here to load any data or perform any tasks before the app is ready
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await Font.loadAsync(CUSTOM_FONTS);
     } catch (e) {
       console.warn(e);
     } finally {
