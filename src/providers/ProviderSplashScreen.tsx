@@ -1,5 +1,4 @@
-import { View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { View } from '@gluestack-ui/themed';
 
 import { useCustomSplashScreen } from '@/hooks';
 
@@ -8,14 +7,9 @@ interface IProviderSplashScreenProps {
 }
 
 export const ProviderSplashScreen = ({ children }: IProviderSplashScreenProps) => {
-  const insets = useSafeAreaInsets();
   const { appIsReady, onLayoutView } = useCustomSplashScreen();
 
   if (!appIsReady) return null;
 
-  return (
-    <View onLayout={onLayoutView} style={{ flex: 1, paddingTop: insets.top }}>
-      {children}
-    </View>
-  );
+  return <View onLayout={onLayoutView}>{children}</View>;
 };

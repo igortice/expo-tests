@@ -1,9 +1,9 @@
-import { Text, View } from 'react-native';
+import { Box, Text } from '@gluestack-ui/themed';
 
 export default function RootApp() {
   return (
-    <View>
-      <Text>Root App</Text>
-    </View>
+    <Box height="$full" justifyContent="center" alignItems="center">
+      <Text>Open up App.js to start working on your app!</Text>
+    </Box>
   );
 }

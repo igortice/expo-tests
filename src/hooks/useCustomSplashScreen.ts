@@ -19,11 +19,11 @@ export const useCustomSplashScreen = () => {
 
   async function prepare() {
     try {
+      // Use here to load any data or perform any tasks before the app is ready
       await new Promise(resolve => setTimeout(resolve, 3000));
     } catch (e) {
       console.warn(e);
     } finally {
-      // Tell the application to render
       setAppIsReady(true);
     }
   }
